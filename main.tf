@@ -8,7 +8,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0.0"
+      version = "~> 2.20"
     }
   }
 }
@@ -54,8 +54,7 @@ variable "db_user" {
 
 variable "db_password" {
     description = "DB Password"
-    sensitive = true
-    default = ""
+    default = "Password123?"
 }
 
 variable "apply_immediately" {
