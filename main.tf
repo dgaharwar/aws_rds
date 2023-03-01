@@ -27,6 +27,11 @@ variable "region" {}
 variable "access_key" {}
 variable "secret_key" {}
 
+variable "db_name" {
+    description = "Name of the Database"
+    default = ""
+}
+
 variable "allocated" {
     description = "DB Size in GB"
     default = "20"
