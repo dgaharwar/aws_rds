@@ -50,7 +50,7 @@ variable "db_user" {
 variable "db_password" {
     description = "DB Password"
     sensitive = true
-    default = "<%=cypher.read('secret/rds')%>"
+    default = ""
 }
 
 variable "apply_immediately" {
@@ -69,7 +69,7 @@ resource "aws_db_instance" "default" {
   engine = "mysql"
   engine_version = var.engine_version
   instance_class = "db.t2.micro"
-  name = "mynewdb"
+  name = var.db_name
   username = var.db_user
   password = var.db_password
   parameter_group_name = "default.mysql5.7"
